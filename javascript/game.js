@@ -1,4 +1,4 @@
-var computerChoices = [
+var letters = [
   "a",
   "b",
   "c",
@@ -26,19 +26,51 @@ var computerChoices = [
   "y",
   "z"
 ];
-
-// Setting for zero
 var wins = 0;
 var losses = 0;
-var guessesLeft = 5;
-var letterUser = [];
-var eachofLetters = null;
+var guessesLeft = 9;
+var guessesSoFar = [];
+var randomLetter;
+var x;
+   x = Math.floor(Math.random() * 26) + 1;
+   randomLetter = letters [x-1];
 
-// Sets the computerGuess variable equal to a random choice from the computerChoice array.
-var computerGuess =
-  computerChoices[Math.floor(Math.random() * computerChoices.length)];
+   randomLetter = "b";
 
-  document.getElementById("Wins").innerHTML = "Wins:" + wins;
+   document.onkeyup = function(event){
+     var keyPressed = event.key;
+     if (keyPressed == randomLetter)
+     {
+      wins = wins + 1; 
+      document.getElementById("Wins").innerHTML = "Wins:" + wins;
+     }
+     else {
+       guessesLeft = guessesLeft - 1; 
+       if (guessesLeft == 0){
+         losses = losses + 1;
+         guessesLeft = 9;
+       }
+       document.getElementById("Leftover").innerHTML = "Guesses left:" + guessesLeft;
+       document.getElementById("Losses").innerHTML = "Losses:" + losses;
+
+     }
+
+
+   };
+
+
+
+
+
+
+    document.getElementById("Wins").innerHTML = "Wins:" + wins;
+
+    document.getElementById("Losses").innerHTML = "Losses:" + losses;
+
+    document.getElementById("Leftover").innerHTML = "Guesses left:" + guessesLeft;
+
+    document.getElementById("soFar").innerHTML = "Your Guesses So Far:" + guessesSoFar;
+    
 
 
 
