@@ -29,39 +29,51 @@ var letters = [
 var wins = 0;
 var losses = 0;
 var guessesLeft = 9;
-var guessesSoFar = [];
+var guessesSoFar = "";
 var randomLetter;
-var x;
-   x = Math.floor(Math.random() * 26) + 1;
-   randomLetter = letters [x-1];
 
-   randomLetter = "b";
+function winningLetter(){
+  var x;
+x = Math.floor(Math.random() * 26) + 1;
+   randomLetter = letters [x-1];
+}
 
    document.onkeyup = function(event){
      var keyPressed = event.key;
-     if (keyPressed == randomLetter)
+     guessesSoFar = guessesSoFar + keyPressed + ",";
+     document.getElementById("soFar").innerHTML = "Your Guesses So Far:" + guessesSoFar;
+     if (keyPressed == randomLetter) //They've won the game
+     
      {
-      wins = wins + 1; 
+      winningLetter ();
+      guessesLeft = 9; 
+      guessesSoFar = "";
+      wins = wins + 1;
+      document.getElementById("soFar").innerHTML = "Your Guesses So Far:" + guessesSoFar;
       document.getElementById("Wins").innerHTML = "Wins:" + wins;
-     }
+      document.getElementById("Leftover").innerHTML = "Guesses left:" + guessesLeft;
+      
+    }
      else {
        guessesLeft = guessesLeft - 1; 
-       if (guessesLeft == 0){
+       if (guessesLeft == 0){ //Used up all their guesses
+         winningLetter ();
          losses = losses + 1;
          guessesLeft = 9;
+         guessesSoFar = ""; //Eliminated what was in the variable
+         
+         document.getElementById("soFar").innerHTML = "Your Guesses So Far:" + guessesSoFar;
+
        }
        document.getElementById("Leftover").innerHTML = "Guesses left:" + guessesLeft;
        document.getElementById("Losses").innerHTML = "Losses:" + losses;
-
+       
      }
 
 
    };
 
-
-
-
-
+    winningLetter ();
 
     document.getElementById("Wins").innerHTML = "Wins:" + wins;
 
