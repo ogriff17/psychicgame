@@ -3,30 +3,30 @@
 }
     
 body {
-    background-image: url('https://mcdn.wallpapersafari.com/medium/49/62/DU5GmR.jpg');
+    background-color: plum;
     background-size:1989px;
 }
 
 h1 {
   font-style: serif;
-  color:white;
+  color:black;
 }
 #Guess {
-  color:white;
+  color:black;
 }
 
 #Wins {
-  color:white;
+  color:black;
 }
 #Losses {
-  color:white;
+  color:black;
 }
 
 #Leftover{
-  color:white;
+  color:black;
 }
 
 #soFar {
-  color:white;
+  color:black;
 }
   
