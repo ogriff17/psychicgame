@@ -3,17 +3,30 @@
 }
     
 body {
-    background: url('../images/mystery.jpg');
+    background-image: url('https://mcdn.wallpapersafari.com/medium/49/62/DU5GmR.jpg');
+    background-size:1989px;
 }
 
 h1 {
   font-style: serif;
-  color:purple;
-
-
+  color:white;
 }
-
 #Guess {
-  color:purple;
-
+  color:white;
 }
+
+#Wins {
+  color:white;
+}
+#Losses {
+  color:white;
+}
+
+#Leftover{
+  color:white;
+}
+
+#soFar {
+  color:white;
+}
+  
