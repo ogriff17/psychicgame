@@ -1,0 +1,19 @@
+* {
+  box-sizing:border-box;
+}
+    
+body {
+    background: url('../images/mystery.jpg');
+}
+
+h1 {
+  font-style: serif;
+  color:purple;
+
+
+}
+
+#Guess {
+  color:purple;
+
+}
