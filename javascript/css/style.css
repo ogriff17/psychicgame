@@ -5,10 +5,13 @@
 body {
     background-color: plum;
     background-size:1989px;
+    font-family:Luminari, fantasy;
+    font-style:italic;
 }
 
 h1 {
-  font-style: serif;
+  font-style:italic;
+  font-family:Luminari, fantasy;
   color:black;
 }
 #Guess {
